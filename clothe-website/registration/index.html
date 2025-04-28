@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothe Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for arrow icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+      * {
+        font-family: "Cabin", sans-serif;
+      }
+
+      /* Header Section Start */
+      /* Top offer Section Start */
+      .top-marquee-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        border: 0;
+      }
+
+      .top-marquee-track {
+        display: flex;
+        width: max-content;
+        animation: top-marquee-scroll 15s linear infinite;
+      }
+
+      .top-marquee-content {
+        display: flex;
+        white-space: nowrap;
+      }
+
+      .top-marquee-item {
+        display: inline-block;
+        margin: 0;
+        padding-right: 30px; /* Space between repeated text */
+        font-weight: 400;
+        color: #ffffff;
+      }
+
+      @keyframes top-marquee-scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%); /* Only move by the width of one copy */
+        }
+      }
+      /* Top offer section End */
+      /* Header Section End */
+
+      /* Location Section Start */
+      .location-area .selected {
+        color: #dc747d;
+      }
+
+      .location-area .p-name:hover {
+        text-decoration: underline;
+      }
+      /* Location Section End */
+
+      /* Registration Section Start */
+      
+      /* Registration Section End */
+ 
+
+      /* Footer Section Start */
+      .footer {
+        border: 15px solid #c7cacd;
+      }
+      /* Footer Section End */
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top z-3 w-100">
+      <!-- Top Offer Section Start -->
+      <section class="top-offer bg-dark">
+        <div class="container">
+          <div class="top-marquee-container py-2">
+            <div class="top-marquee-track" id="top-marquee-track">
+              <!-- Content will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Offer Section End -->
+      <nav class="bg-white py-0">
+        <div class="container-fluid">
+          <div
+            class="d-flex justify-content-between align-items-center w-100 px-3 py-2"
+          >
+            <div class="d-flex justify-content-center flex-grow-1">
+              <a href="#" class="navbar-brand">
+                <img
+                  src="https://www.bunaai.com/cdn/shop/files/logo_1.png?v=1742036541"
+                  alt="logo"
+                  class="img-fluid"
+                />
+              </a>
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-3 fs-5">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span><i class="fa-solid fa-user"></i></span>
+                <span><i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"></i></span>
+                
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                  <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title text-uppercase p-3 fw-medium" id="offcanvasExampleLabel">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body p-4">
+                    <div class="d-flex justify-content-between align-items-center gap-2 border-bottom pb-4">
+                      <div class="d-flex gap-2">
+                        <div class="h-100">
+                          <img src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=93" alt="product-image" class="img-fluid">
+                        </div>
+                        <div class="d-flex flex-column">
+                          <span class="fs-6">Dusty Mauve Kurta Set</span>
+                          <span class="fs-6">S</span>
+                          <div class="quantity">
+                            <div class="quantity-input">
+                              <div class="d-flex w-50 border rounded-0 mt-2">
+                                <button class="btn rounded-0" type="button">
+                                  <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input
+                                  type="text"
+                                  class="form-control text-center w- border-0"
+                                  value="1"
+                                />
+                                <button class="btn rounded-0" type="button">
+                                  <i class="fa-solid fa-plus"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                        <span class="fs-6">₹3,500.00</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center gap-2 border-bottom pb-4 pt-3">
+                      <div class="d-flex gap-2">
+                        <div class="h-100">
+                          <img src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=93" alt="product-image" class="img-fluid">
+                        </div>
+                        <div class="d-flex flex-column">
+                          <span class="fs-6">Dusty Mauve Kurta Set</span>
+                          <span class="fs-6">S</span>
+                          <div class="quantity">
+                            <div class="quantity-input">
+                              <div class="d-flex w-50 border rounded-0 mt-2">
+                                <button class="btn rounded-0" type="button">
+                                  <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <input
+                                  type="text"
+                                  class="form-control text-center w- border-0"
+                                  value="1"
+                                />
+                                <button class="btn rounded-0" type="button">
+                                  <i class="fa-solid fa-plus"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </div>
+                        <span class="fs-6">₹3,500.00</span>
+                      </div>
+                    </div>
+
+                    <div class="offers-for-you pt-4">
+                      <div class="w-100 border-top border-2">
+                        <div class="py-2">
+                          <span>
+                            Additional Offers
+                          </span>
+                        </div>
+                          <div
+                            class="accordion-body d-flex flex-column gap-3"
+                          >
+                            <div class="border p-3 fs-6">
+                              <span>Buy 1 & Get 7% off</span>
+                              <p class="mb-0">
+                                Use Code:
+                                <span class="fw-bold text-uppercase"
+                                  >Prepaid</span
+                                >
+                              </p>
+                            </div>
+                            <div class="border p-3 fs-6">
+                              <span
+                                >Buy 2 Get 15% off | Buy 3 Get 20% off | Buy 4
+                                Get 25% off</span
+                              >
+                            </div>
+                            <div class="border p-3 fs-6">
+                              <span
+                                >Get additional ₹ 200 OFF On minimum purchase
+                                of ₹ 6,000
+                              </span>
+                              <p class="mb-0">
+                                Use Code:
+                                <span class="fw-bold text-uppercase"
+                                  >GET200</span
+                                >
+                              </p>
+                            </div>
+                            <div class="border p-3 fs-6">
+                              <span
+                                >Get additional ₹ 500 OFF On minimum purchase
+                                of ₹ 10,000</span
+                              >
+                              <p class="mb-0">
+                                Use Code:
+                                <span class="fw-bold text-uppercase"
+                                  >GET500</span
+                                >
+                              </p>
+                            </div>
+                            <div class="border p-3 fs-6">
+                              <span
+                                >Get additional ₹ 1500 OFF On minimum purchase
+                                of ₹ 15,000</span
+                              >
+                              <p class="mb-0">
+                                Use Code:
+                                <span class="fw-bold text-uppercase"
+                                  >GET1500</span
+                                >
+                              </p>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="offcanvas-footer p-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="fs-6">
+                        Total 
+                      </span>
+                      <span class="fs-5 fw-bold">
+                        ₹ 7,000.00
+                      </span>
+                    </div>
+                    <div class="fs-6 pt-2">
+                      <p>Tax included. <span><a href="#" class="text-decoration-none text-primary">Shipping </a></span>calculated at checkout.</p>
+                      <div class="d-flex align-items-center text-uppercase fs-6">
+                        <input type="checkbox" class="checkbox me-1">
+                        <span>
+                          Pay via gift card / international orders
+                        </span>
+                      </div>
+                      <div class="pt-3">
+                        <button class="btn btn-outline-dark rounded-0 px-4 py-2 text-uppercase w-100">
+                          <i class="fa-solid fa-lock"></i>
+                          Checkout
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="top-header py-2 border-2 border-top shadow-sm">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="w-100 d-flex justify-content-center text-uppercase">
+                <ul class="m-0 list-unstyled d-flex gap-3">
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >New Arrivals</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Indian Wear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Western Wear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Menswear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Sale</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Location Area Start -->
+      <section class="location-area">
+        <div class="px-2 px-md-5 mx-md-4">
+          <div class="py-2">
+            <span><a href="#" class="text-dark">Home</a></span>
+            <span class="fw-bold">&#x3E;</span>
+            <span>
+              <a href="#" class="selected text-decoration-none">
+                Category Name
+              </a>
+            </span>
+            <span class="fw-bold">&#x3E;</span>
+            <span class="p-name">
+              <a href="#" class="text-decoration-none text-dark">
+                Product Name
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- Location Area End -->
+
+      <!-- Registration Section Start -->
+
+       <!-- Registration Section End -->
+
+      <!-- Footer Section Start -->
+      <footer>
+        <section class="footer py-5">
+          <div class="px-2 px-md-5 mx-md-4">
+            <div class="row">
+              <div class="col-md-2">
+                <p class="fw-bold">Categories</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">New Arrivals</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Men's Wear</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Dresses</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Kurta & Suit Sets</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Lehenga Sets</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sarees</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Nightwear</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Bed Linens</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Shoes</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sale</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Discover</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Blog</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Celebrities in Bunaai</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Women Of Bunaai</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sitemap</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Refer & Earn</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Become a Stockist</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Information</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">My Account</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Track Order</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Privacy Policy</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Delivery Information</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Refund, Returns & Exchanges</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Store Locator</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Terms of Use</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <p class="fw-bold">Customer Service</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Contact</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-regular fa-clock"></i>
+                      </div>
+                      <div>
+                        <span>Mon - Fri: 9.00 AM - 5.00 PM (IST)</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-solid fa-phone"></i>
+                      </div>
+                      <div>
+                        <span>+91 9876543210</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-regular fa-envelope"></i>
+                      </div>
+                      <div>
+                        <span>support@gmail.com</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                      </div>
+                      <div>
+                        <span
+                          >3rd Floor, B 29-30, B 39-40, 22 Godam Cir, Industrial
+                          Area, Hawa Sadak, Sharma Colony, Ashok Nagar, Jaipur,
+                          Rajasthan 302001</span
+                        >
+                      </div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Stay Connected</p>
+                <ul class="list-unstyled d-flex gap-3">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-facebook"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-instagram"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-linkedin"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-pinterest"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-youtube"></i></li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="footer-bottom py-3">
+          <div class="px-2 px-md-5 mx-md-4">
+            <p class="mb-0 d-flex align-items-center justify-content-center">
+              <span>
+                <span>Powered by Flicksell</span>
+              </span>
+            </p>
+          </div>
+        </section>
+      </footer>
+      <!-- Footer Section End -->
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const topMarqueeTrack = document.getElementById("top-marquee-track");
+        const topOfferText =
+          "Buy 2 Get 15% off | Buy 3 Get 20% off | Buy 4 Get 25% off";
+
+        // Create two identical marquee content sections
+        // When the first one finishes scrolling, the second one will be in view
+        // This creates the continuous loop effect
+        function createMarqueeContent() {
+          const content = document.createElement("div");
+          content.className = "top-marquee-content";
+
+          // Add enough repetitions to fill the screen width
+          const screenWidth = window.innerWidth;
+          const textWidth = 300; // Approximate width of one text item
+          const repetitions = Math.ceil((screenWidth * 3) / textWidth); // Multiple by 3 to ensure enough content
+
+          for (let i = 0; i < repetitions; i++) {
+            const item = document.createElement("div");
+            item.className = "top-marquee-item";
+            item.textContent = topOfferText;
+            content.appendChild(item);
+          }
+
+          return content;
+        }
+
+        // Add two identical content sections to create the infinite loop
+        topMarqueeTrack.appendChild(createMarqueeContent());
+        topMarqueeTrack.appendChild(createMarqueeContent());
+
+        // Adjust animation speed based on screen width
+        function adjustSpeed() {
+          const trackWidth = topMarqueeTrack.scrollWidth;
+          const duration = trackWidth / 100; // Adjust divisor to control speed
+          topMarqueeTrack.style.animationDuration = `${duration}s`;
+        }
+
+        adjustSpeed();
+      });
+    </script>
+  </body>
+</html>

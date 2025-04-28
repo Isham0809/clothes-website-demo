@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clothe Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for arrow icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+        * {
+          font-family: "Cabin", sans-serif;
+        }
+
+        /* Header Section Start */
+        /* Top offer Section Start */
+        .top-marquee-container {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          border: 0;
+        }
+
+        .top-marquee-track {
+          display: flex;
+          width: max-content;
+          animation: top-marquee-scroll 15s linear infinite;
+        }
+
+        .top-marquee-content {
+          display: flex;
+          white-space: nowrap;
+        }
+
+        .top-marquee-item {
+          display: inline-block;
+          margin: 0;
+          padding-right: 30px; /* Space between repeated text */
+          font-weight: 400;
+          color: #ffffff;
+        }
+
+        @keyframes top-marquee-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%); /* Only move by the width of one copy */
+          }
+        }
+        /* Top offer section End */
+        /* Header Section End */
+
+        /* Category Section Start */
+        .product-card {
+          transition: all 0.3s;
+        }
+
+        .overlay {
+          bottom: -100% !important;
+          background-color: rgba(255, 255, 255, 0.399);
+          transition: bottom 0.4s ease-in-out;
+        }
+
+        .bg-img:hover .overlay {
+          bottom: 0 !important;
+        }
+
+        .product-badge {
+          background-color: #f5626a;
+        }
+
+        .product-badge::after {
+          content: "NEW";
+        }
+
+        .page-link {
+          color: #976f71;
+        }
+
+        .page-link:focus {
+          color: #976f71;
+          background-color: #976f7183;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem #684b4da5;
+        }
+
+        .page-link:hover {
+          color: #976f71;
+        }
+        
+        .active>.page-link {
+        background-color: #976f71;
+        user-select: none;
+        cursor: pointer;
+        color: #fff;
+        border-color: #976f71;
+        }
+        /* Category Section End */
+
+        /* Footer Section Start */
+        .footer {
+          border: 15px solid #c7cacd;
+        }
+        /* Footer Section End */
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top z-3 w-100">
+      <!-- Top Offer Section Start -->
+      <section class="top-offer bg-dark">
+        <div class="container">
+          <div class="top-marquee-container py-2">
+            <div class="top-marquee-track" id="top-marquee-track">
+              <!-- Content will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Top Offer Section End -->
+      <nav class="bg-white py-0">
+        <div class="container-fluid">
+          <div
+            class="d-flex justify-content-between align-items-center w-100 px-3 py-2"
+          >
+            <div class="d-flex justify-content-center flex-grow-1">
+              <a href="#" class="navbar-brand">
+                <img
+                  src="https://www.bunaai.com/cdn/shop/files/logo_1.png?v=1742036541"
+                  alt="logo"
+                  class="img-fluid"
+                />
+              </a>
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-3 fs-5">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span><i class="fa-solid fa-user"></i></span>
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="top-header py-2 border-2 border-top shadow-sm">
+          <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="w-100 d-flex justify-content-center text-uppercase">
+                <ul class="m-0 list-unstyled d-flex gap-3">
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >New Arrivals</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Indian Wear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Western Wear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Menswear</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="text-decoration-none text-dark fw-bold"
+                      >Sale</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Location Area Start -->
+      <section class="location-area">
+        <div class="px-2 px-md-5 mx-md-4">
+          <div class="py-2">
+            <span><a href="#" class="text-dark">Home</a></span>
+            <span class="fw-bold">&#x3E;</span>
+            <span
+              ><a href="#" class="text-decoration-none text-dark"
+                >Category Name</a
+              ></span
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Location Area End -->
+
+      <!-- Category Section Start -->
+      <section class="category-section">
+        <div class="px-2 px-md-5 mx-md-4">
+          <div class="py-2">
+            <div class="d-flex align-items-center justify-content-center w-100">
+              <h2 class="bg-secondary-subtle rounded-2 py-2 px-3">
+                Category Heading
+              </h2>
+            </div>
+          </div>
+
+          <div class="py-2 border-1 border-bottom">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="p-2">
+                <div class="">
+                  <button class="btn btn-outline-dark shadow">
+                    <i class="fa-solid fa-filter"></i>
+                    <span>Filter</span>
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <div class="p-2">
+                  <span class="fw-bold border rounded-2 shadow py-1 px-2"
+                    >147 Products</span
+                  >
+                </div>
+                <div>
+                  <button class="btn btn-outline-dark shadow">
+                    <span class="fw-bold">Sort By</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 border-1 border-end">
+              <div class="pt-3 pe-3">
+                <div class="border-1 border-bottom pb-3">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Category</span>
+                  </div>
+                  <div class="">
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>New Arrivals</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(57)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Kurta & Suit Sets</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(92)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Kurta Sets</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(107)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Co-Ord Sets</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(57)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Suit Sets</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(1)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <span class="text-secondary">
+                      <i class="fa-solid fa-plus"></i>
+                      <span>Show More</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="border-1 border-bottom pb-3 pt-2">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Price</span>
+                  </div>
+                  <div class="">
+                    <div>
+                      <input
+                        type="range"
+                        class="form-range"
+                        min="0"
+                        max="5"
+                        step="0.5"
+                        id="customRange3"
+                      />
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="mb-3">
+                        <label for="from" class="form-label mb-1">FROM</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="from"
+                          placeholder="&#8377; 0"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="to" class="form-label mb-1">TO</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="to"
+                          placeholder="&#8377; 5000.00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-1 border-bottom pb-3 pt-2">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Color</span>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <ul class="list-unstyled mb-2 d-flex gap-3">
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #000"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #0033ff"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #012269"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: hsl(184, 100%, 62%)"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #60ff90"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #d050ff"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #ff57f9"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #ff278c"
+                          ></span>
+                        </li>
+                        <li>
+                          <span
+                            class="rounded-circle px-2"
+                            style="background-color: #ffd91d"
+                          ></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-1 border-bottom pb-3 pt-2">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Pattern</span>
+                  </div>
+                  <div class="">
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>ALine</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(42)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Angrakha</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(2)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Straight</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(34)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Kaftan</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(3)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Umbrella</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(4)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <span class="text-secondary">
+                      <i class="fa-solid fa-plus"></i>
+                      <span>Show More</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="border-1 border-bottom pb-3 pt-2">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Sleeve</span>
+                  </div>
+                  <div class="">
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>3/4 Th Sleeve</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(75)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Elbow Sleeves</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(8)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Chudidar Sleeves</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(1)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Full Sleeves</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(23)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Sleeveless</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(9)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <span class="text-secondary">
+                      <i class="fa-solid fa-plus"></i>
+                      <span>Show More</span>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="border-1 border-bottom pb-3 pt-2">
+                  <div class="pb-3">
+                    <span class="text-uppercase fw-bold">Fabric</span>
+                  </div>
+                  <div class="">
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>60*60</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(1)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Slik Crepe</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(3)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Cotton Slik</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(7)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Georgette</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(7)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-unstyled mb-1">
+                      <li>
+                        <div
+                          class="d-flex align-items-center justify-content-between gap-2"
+                        >
+                          <div>
+                            <span class="me-2">
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="checkbox"
+                              />
+                            </span>
+                            <span>Chiffon</span>
+                          </div>
+                          <div class="text-secondary">
+                            <span>(1)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <span class="text-secondary">
+                      <i class="fa-solid fa-plus"></i>
+                      <span>Show More</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-9 ps-0">
+              <div class="pt-4 ps-4 pb-4">
+                <div class="d-flex align-items-center gap-2 pb-3">
+                  <span class="btn bg-secondary-subtle rounded-5 px-2 py-1">
+                    <h6 class="mb-0 fw-normal">
+                      New Arrivals
+                      <span class="bg-white px-1 rounded-circle">
+                        <i class="fa-solid fa-close"></i>
+                      </span>
+                    </h6>
+                  </span>
+                  <span class="btn bg-secondary-subtle rounded-5 px-2 py-1">
+                    <h6 class="mb-0 fw-normal">Close all</h6>
+                  </span>
+                </div>
+
+                <div class="main-img">
+                  <div class="row m-0">
+                    <div class="col-6 col-md-4 col-lg-4">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4 mt-md-3">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4 mt-md-3">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4 mt-md-3">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4 mt-md-3">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-4 mt-md-3">
+                      <div
+                        class="bg-img shadow position-relative w-100 h-100 overflow-hidden rounded-3"
+                      >
+                        <img
+                          src="https://www.bunaai.com/cdn/shop/files/BunaaiOutfits-8250.jpg?v=1741590633&width=540"
+                          alt="Indian wear"
+                          class="img-fluid d-block"
+                        />
+                        <div
+                          class="product-badge position-absolute top-0 start-0 px-3 py-1 text-light fw-medium"
+                        ></div>
+                        <div
+                          class="overlay shadow position-absolute start-0 w-100 h-100 d-flex align-items-center justify-content-center flex-column"
+                        >
+                          <div class="product-name">
+                            <a
+                              href="#"
+                              class="text-decoration-none text-dark user-select-none"
+                            >
+                              <span
+                                class="user-select-none text-dark fw-bold fs-4"
+                                >Dusty Mauve Kurta Set</span
+                              >
+                            </a>
+                          </div>
+
+                          <div class="product-price pb-2">
+                            <span
+                              class="user-select-none text-dark fw-bold fs-4"
+                              >₹ 1000</span
+                            >
+                          </div>
+
+                          <div
+                            class="product-size d-flex align-items-center justify-content-center gap-3"
+                          >
+                            <ul
+                              class="list-unstyled d-flex align-items-center justify-content-center gap-3"
+                            >
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                S
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                M
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                L
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XL
+                              </li>
+                              <li
+                                class="bg-danger-subtle shadow w-100 h-100 px-3 py-1 text-dark fw-bold user-select-none"
+                              >
+                                XXL
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div class="product-button pt-3">
+                            
+                            <a href="../product-page/index.html">
+                            <button
+                              class="btn btn-outline-dark shadow px-3 py-1"
+                            >
+                              Show Details
+                            </button></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="d-flex align-items-center justify-content-center pt-5"
+                  >
+                    <nav aria-label="...">
+                      <ul class="pagination gap-4">
+                        <li>
+                          <div class="page-link rounded-circle" href="#">
+                            <i class="fa-solid fa-chevron-left"></i>
+                          </div>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                          <span class="page-link rounded-circle z-2">1</span>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link rounded-circle" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link rounded-circle" href="#">3</a>
+                        </li>
+                        <li>
+                          <div class="page-link rounded-circle" href="#">
+                            <i class="fa-solid fa-chevron-right"></i>
+                          </div>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Category Section End -->
+
+      <!-- Footer Section Start -->
+      <footer>
+        <section class="footer py-5">
+          <div class="px-2 px-md-5 mx-md-4">
+            <div class="row">
+              <div class="col-md-2">
+                <p class="fw-bold">Categories</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">New Arrivals</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Men's Wear</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Dresses</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Kurta & Suit Sets</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Lehenga Sets</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sarees</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Nightwear</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Bed Linens</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Shoes</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sale</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Discover</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Blog</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Celebrities in Bunaai</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Women Of Bunaai</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Sitemap</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Refer & Earn</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Become a Stockist</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Information</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">My Account</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Track Order</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Privacy Policy</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Delivery Information</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Refund, Returns & Exchanges</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Store Locator</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Terms of Use</li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <p class="fw-bold">Customer Service</p>
+                <ul class="list-unstyled">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1">Contact</li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-regular fa-clock"></i>
+                      </div>
+                      <div>
+                        <span>Mon - Fri: 9.00 AM - 5.00 PM (IST)</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-solid fa-phone"></i>
+                      </div>
+                      <div>
+                        <span>+91 9876543210</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-regular fa-envelope"></i>
+                      </div>
+                      <div>
+                        <span>support@gmail.com</span>
+                      </div>
+                    </li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="mb-1 d-flex align-items-center gap-3">
+                      <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                      </div>
+                      <div>
+                        <span
+                          >3rd Floor, B 29-30, B 39-40, 22 Godam Cir, Industrial
+                          Area, Hawa Sadak, Sharma Colony, Ashok Nagar, Jaipur,
+                          Rajasthan 302001</span
+                        >
+                      </div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+              <div class="col-md-2">
+                <p class="fw-bold">Stay Connected</p>
+                <ul class="list-unstyled d-flex gap-3">
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-facebook"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-instagram"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-linkedin"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-pinterest"></i></li>
+                  </a>
+                  <a href="#" class="text-decoration-none text-dark">
+                    <li class="fs-4"><i class="fa-brands fa-youtube"></i></li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="footer-bottom py-3">
+          <div class="px-2 px-md-5 mx-md-4">
+            <p class="mb-0 d-flex align-items-center justify-content-center">
+              <span>
+                <span>Powered by Flicksell</span>
+              </span>
+            </p>
+          </div>
+        </section>
+      </footer>
+      <!-- Footer Section End -->
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const topMarqueeTrack = document.getElementById("top-marquee-track");
+        const topOfferText =
+          "Buy 2 Get 15% off | Buy 3 Get 20% off | Buy 4 Get 25% off";
+
+        // Create two identical marquee content sections
+        // When the first one finishes scrolling, the second one will be in view
+        // This creates the continuous loop effect
+        function createMarqueeContent() {
+          const content = document.createElement("div");
+          content.className = "top-marquee-content";
+
+          // Add enough repetitions to fill the screen width
+          const screenWidth = window.innerWidth;
+          const textWidth = 300; // Approximate width of one text item
+          const repetitions = Math.ceil((screenWidth * 3) / textWidth); // Multiple by 3 to ensure enough content
+
+          for (let i = 0; i < repetitions; i++) {
+            const item = document.createElement("div");
+            item.className = "top-marquee-item";
+            item.textContent = topOfferText;
+            content.appendChild(item);
+          }
+
+          return content;
+        }
+
+        // Add two identical content sections to create the infinite loop
+        topMarqueeTrack.appendChild(createMarqueeContent());
+        topMarqueeTrack.appendChild(createMarqueeContent());
+
+        // Adjust animation speed based on screen width
+        function adjustSpeed() {
+          const trackWidth = topMarqueeTrack.scrollWidth;
+          const duration = trackWidth / 100; // Adjust divisor to control speed
+          topMarqueeTrack.style.animationDuration = `${duration}s`;
+        }
+
+        adjustSpeed();
+      });
+    </script>
+  </body>
+</html>
